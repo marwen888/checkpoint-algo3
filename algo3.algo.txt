@@ -1,0 +1,87 @@
+ALGORITHM_dot
+VAR
+vect1,vect2:ARRAY_OF INTEGER;
+i,n:INTEGER;
+BEGIN
+PROCEDURE lire (n:INTEGER,TAB:ARRAY_OF INTEGER)
+BEGIN
+WRITE ("entrer la taille")
+READ (n)
+    FOR i FROM 0 TO n DO
+     READ(TAB[i]);
+    END_FOR
+END
+PROCEDURE prod (vect1,vect2)
+  VAR count:=0;
+BEGIN
+    FOR i FROM 0 vect1.length-1 DO
+       count+=vect1[i]*vect2[i];
+    END_FOR
+ END
+lire (n,vect1);
+lire (n,vect2);
+prod (vect1,vect2)
+END
+/////////////////////////////////////////////////////////////////////
+ALGORITHM_dot_ortogonaux
+VAR
+vect1,vect2:ARRAY_OF INTEGER;
+i,n:INTEGER;
+BEGIN
+PROCEDURE lire (n:INTEGER,TAB:ARRAY_OF INTEGER)
+BEGIN
+WRITE ("entrer la taille")
+READ (n)
+    FOR i FROM 0 TO n DO
+     READ(TAB[i]);
+    END_FOR
+END
+PROCEDURE prod (vect1,vect2)
+  VAR count:=0;
+BEGIN
+    FOR i FROM 0 vect1.length-1 DO
+       count+=vect1[i]*vect2[i];
+    END_FOR
+
+ IF (count==0)  THEN
+    WRITE ("vecteurs orthogonaux" )
+    END IF
+ END
+lire (n,vect1);
+lire (n,vect2);
+prod (vect1,vect2)
+END
+
+//////////////////////////////////////////////////////////////////////
+ALGORITHM_dot_function
+VAR
+vect1,vect2:ARRAY_OF INTEGER;
+i,n, count:INTEGER;
+BEGIN
+PROCEDURE lire (n:INTEGER,TAB:ARRAY_OF INTEGER)
+BEGIN
+WRITE ("entrer la taille")
+READ (n)
+    FOR i FROM 0 TO n DO
+     READ(TAB[i]);
+    END_FOR
+END
+FUNCTION prod (v1,v2) : INTEGER
+VAR
+     count:=0;
+BEGIN
+    FOR i FROM 0 v1.length-1 DO
+       count+=v1[i]*v2[i];
+    END_FOR
+
+    RETURN count ;
+END
+lire (n,vect1);
+lire (n,vect2);
+count:= prod(vect1,vect2);
+WRITE("le produit est ", count);
+END
+
+
+
+
